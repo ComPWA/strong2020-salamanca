@@ -5,11 +5,14 @@ This repository contains the exercises for the [STRONG2020 HaSP School](https://
 ## Installation
 
 1. Install [Miniconda](https://docs.conda.io/en/latest/miniconda.html)
+
 2. Create and activate the virtual environment:
+
    ```python
-   conda env create -f
+   conda env create
    conda activate strong2020
    ```
+
 3. Run notebooks in [Jupyter Lab](https://jupyter.org):
    ```python
    jupyter lab
