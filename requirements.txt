@@ -1,0 +1,9 @@
+# Computations
+matplotlib
+numpy
+particle
+
+# Developer tools
+jupyterlab
+jupyterlab-code-formatter
+pre-commit
