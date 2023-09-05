@@ -1,5 +1,7 @@
 # STRONG2020 HaSP School
 
+[![GitHub Pages](https://github.com/ComPWA/strong2020-salamanca/actions/workflows/docs.yml/badge.svg)](https://github.com/ComPWA/strong2020-salamanca/actions/workflows/docs.yml)
+
 This (unofficial) repository contains the exercises for the [STRONG2020 HaSP School](https://indico.ific.uv.es/event/6803) which was organised in Salamanca in 2023. Many of the files hosted in this repository originate from the [lecture material](https://indico.ific.uv.es/event/6803/timetable).
 
 ## Installation

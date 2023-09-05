@@ -8,6 +8,9 @@ execute:
   execute_notebooks: cache
   timeout: 600
 
+html:
+  use_repository_button: true
+
 launch_buttons:
   binderhub_url: https://mybinder.org
   colab_url: https://colab.research.google.com
