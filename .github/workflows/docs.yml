@@ -19,11 +19,11 @@ jobs:
         with:
           python-version: "3.10"
       - run: pip install -r requirements.txt
-      - run: jupyter book build docs -W
+      - run: jupyter book build . -W
       - uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: docs/_build/html
+          path: ./_build/html
 
   gh-pages:
     name: Upload to GitHub Pages
