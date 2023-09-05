@@ -4,6 +4,7 @@ numpy
 particle
 
 # Developer tools
+jupyter-book
 jupyterlab
 jupyterlab-code-formatter
 pre-commit

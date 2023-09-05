@@ -1,0 +1,19 @@
+title: Solutions to STRON2020 HaSP School
+author: Participants of the STRONG2020 HaSP School
+copyright: "2023"
+
+execute:
+  allow_errors: false
+  execute_notebooks: cache
+  timeout: 600
+
+only_build_toc_files: true
+
+repository:
+  url: https://github.com/ComPWA/strong2020-salamanca
+  path_to_book: .
+  branch: main
+
+sphinx:
+  config:
+    nb_execution_show_tb: True
