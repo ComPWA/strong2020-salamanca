@@ -29,7 +29,10 @@ repos:
           - |
             cell.attachments
             cell.metadata.code_folding
+            cell.metadata.outputId
+            cell.metadata.colab
             cell.metadata.id
+            cell.metadata.slideshow
             cell.metadata.user_expressions
             metadata.celltoolbar
             metadata.colab.name
