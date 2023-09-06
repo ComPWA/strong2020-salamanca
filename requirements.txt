@@ -3,6 +3,8 @@ matplotlib
 numpy
 particle
 pandas
+pylorentz
+scipy
 
 # Developer tools
 black

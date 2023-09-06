@@ -32,6 +32,7 @@ repos:
             cell.metadata.code_folding
             cell.metadata.colab
             cell.metadata.editable
+            cell.metadata.executionInfo
             cell.metadata.id
             cell.metadata.outputId
             cell.metadata.slideshow
