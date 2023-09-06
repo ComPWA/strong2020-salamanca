@@ -2,8 +2,11 @@
 matplotlib
 numpy
 particle
+pandas
 
 # Developer tools
+black
+isort
 jupyter-book
 jupyterlab
 jupyterlab-code-formatter
