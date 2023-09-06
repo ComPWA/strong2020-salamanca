@@ -28,10 +28,12 @@ repos:
           - --extra-keys
           - |
             cell.attachments
+            cell.id
             cell.metadata.code_folding
-            cell.metadata.outputId
             cell.metadata.colab
+            cell.metadata.editable
             cell.metadata.id
+            cell.metadata.outputId
             cell.metadata.slideshow
             cell.metadata.user_expressions
             metadata.celltoolbar
