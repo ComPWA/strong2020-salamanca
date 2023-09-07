@@ -25,7 +25,5 @@ repository:
 
 sphinx:
   config:
-    html_theme_options:
-      show_toc_level: 2
     mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
     nb_execution_show_tb: True
