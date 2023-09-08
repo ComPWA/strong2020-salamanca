@@ -1,6 +1,8 @@
 *.csv
 *.dat
 .ipynb_checkpoints/
+.pytest_cache/
+.virtual_documents/
 ExtendedLLexample.txt
 _build/
 data/

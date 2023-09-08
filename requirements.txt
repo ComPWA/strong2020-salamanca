@@ -1,15 +1,9 @@
-# Computations
-matplotlib
-numpy
-particle
-pandas
-pylorentz
-scipy
-
-# Developer tools
 black
 isort
 jupyter-book
 jupyterlab
 jupyterlab-code-formatter
+jupyterlab-lsp
+nbmake
 pre-commit
+python-lsp-server[rope]
