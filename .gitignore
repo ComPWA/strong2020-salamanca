@@ -1,4 +1,5 @@
 *.csv
+*.dat
 .ipynb_checkpoints/
 ExtendedLLexample.txt
 _build/
