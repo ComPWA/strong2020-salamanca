@@ -19,6 +19,18 @@ jobs:
         with:
           python-version: "3.10"
       - run: pip install -r requirements.txt
+      - name: Fetch Jupyter cache
+        uses: actions/cache@v3
+        with:
+          key: jupyter-cache
+          path: |
+            ./_build/.jupyter_cache
+      - name: Fetch downloaded data
+        uses: actions/cache@v3
+        with:
+          key: data
+          path: |
+            ./data
       - run: jupyter book build . -W
       - uses: actions/upload-pages-artifact@v1
         if: always()
