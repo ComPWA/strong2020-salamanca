@@ -1,8 +1,4 @@
 format: jb-book
 root: README
 chapters:
-  - file: lecture2
-  - file: lecture6-nbarp
-  - file: lecture6-gammap
-  - file: lecture6-gammap-solution
-  - file: lecture9
+  - glob: lecture*
