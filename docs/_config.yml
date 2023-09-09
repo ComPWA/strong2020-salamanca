@@ -34,3 +34,5 @@ sphinx:
     nb_execution_show_tb: True
     suppress_warnings:
       - mystnb.unknown_mime_type
+  extra_extensions:
+    - sphinx_exercise
