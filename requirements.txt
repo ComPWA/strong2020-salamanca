@@ -5,6 +5,7 @@ jupyter-book
 jupyterlab
 jupyterlab-code-formatter
 jupyterlab-lsp
+jupyterlab-myst
 nbmake
 pre-commit
 python-lsp-server[flake8,rope]
