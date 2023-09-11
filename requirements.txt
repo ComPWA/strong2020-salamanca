@@ -1,4 +1,5 @@
 black
+ipympl
 isort
 jupyter-book
 jupyterlab
