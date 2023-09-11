@@ -22,13 +22,19 @@ jobs:
       - name: Fetch Jupyter cache
         uses: actions/cache@v3
         with:
-          key: jupyter-cache
+          key: jupyter-cache-${{ hashFiles('**.ipynb') }}
+          restore-keys: |
+            jupyter-cache-${{ hashFiles('**.ipynb') }}
+            jupyter-cache
           path: |
             ./_build/.jupyter_cache
       - name: Fetch downloaded data
         uses: actions/cache@v3
         with:
-          key: data
+          key: data-${{ hashFiles('data/') }}
+          restore-keys: |
+            data-${{ hashFiles('data/') }}
+            data
           path: |
             ./data
       - run: jupyter book build . -W
