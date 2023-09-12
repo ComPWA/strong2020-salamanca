@@ -22,26 +22,26 @@ jobs:
       - name: Fetch Jupyter cache
         uses: actions/cache@v3
         with:
-          key: jupyter-cache-${{ hashFiles('**.ipynb') }}
+          key: jupyter-cache-${{ hashFiles('docs/**.ipynb') }}
           restore-keys: |
-            jupyter-cache-${{ hashFiles('**.ipynb') }}
+            jupyter-cache-${{ hashFiles('docs/**.ipynb') }}
             jupyter-cache
           path: |
-            ./_build/.jupyter_cache
+            ./docs/_build/.jupyter_cache
       - name: Fetch downloaded data
         uses: actions/cache@v3
         with:
-          key: data-${{ hashFiles('data/') }}
+          key: data-${{ hashFiles('docs/data/') }}
           restore-keys: |
-            data-${{ hashFiles('data/') }}
+            data-${{ hashFiles('docs/data/') }}
             data
           path: |
-            ./data
-      - run: jupyter book build . -W
+            ./docs/data
+      - run: jupyter book build docs/ -W
       - uses: actions/upload-pages-artifact@v1
         if: always()
         with:
-          path: ./_build/html
+          path: ./docs/_build/html
 
   gh-pages:
     name: Upload to GitHub Pages

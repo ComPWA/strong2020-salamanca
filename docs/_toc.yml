@@ -1,4 +1,4 @@
 format: jb-book
-root: README
+root: index
 chapters:
   - glob: lecture*
