@@ -7,4 +7,4 @@ jupyterlab-code-formatter
 jupyterlab-lsp
 nbmake
 pre-commit
-python-lsp-server[rope]
+python-lsp-server[flake8,rope]

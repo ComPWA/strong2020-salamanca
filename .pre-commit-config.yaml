@@ -18,7 +18,10 @@ repos:
     rev: 1.7.0
     hooks:
       - id: nbqa-black
+      - id: nbqa-flake8
       - id: nbqa-isort
+      - id: nbqa-pyupgrade
+        args: [--py37-plus]
 
   - repo: https://github.com/kynan/nbstripout
     rev: 0.6.1
