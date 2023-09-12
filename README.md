@@ -26,7 +26,7 @@ This (unofficial) repository contains the exercises for the [STRONG2020 HaSP Sch
 The website [compwa.github.io/strong2020-salamanca](https://compwa.github.io/strong2020-salamanca) is automatically generated from the notebooks in this repository using [Jupyter Book](https://jupyterbook.org). You can also run the notebooks and build the documentation locally as follows:
 
 ```shell
-jb build .
+jb build docs/
 ```
 
 Adding the flag `-W` renders warnings as errors, which is useful for checking whether the notebooks run correctly.

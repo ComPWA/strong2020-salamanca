@@ -23,7 +23,7 @@ only_build_toc_files: true
 
 repository:
   url: https://github.com/ComPWA/strong2020-salamanca
-  path_to_book: .
+  path_to_book: docs
   branch: main
 
 sphinx:

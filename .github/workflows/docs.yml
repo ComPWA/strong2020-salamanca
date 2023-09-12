@@ -37,7 +37,7 @@ jobs:
             data
           path: |
             ./data
-      - run: jupyter book build . -W
+      - run: jupyter book build docs/ -W
       - uses: actions/upload-pages-artifact@v1
         if: always()
         with:
