@@ -7,3 +7,5 @@ ExtendedLLexample.txt
 _build/
 condaenv.*.requirements.txt
 data/
+docs/example.txt
+docs/lecture18
