@@ -10,6 +10,7 @@
     "ms-python.python",
     "ms-toolsai.jupyter",
     "ms-toolsai.vscode-jupyter-cell-tags",
+    "ms-toolsai.vscode-jupyter-slideshow",
     "ms-vscode.live-server",
     "tyriar.sort-lines",
     "yzhang.markdown-all-in-one"
