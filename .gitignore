@@ -1,11 +1,9 @@
 *.csv
 *.dat
+*.txt
 .ipynb_checkpoints/
 .pytest_cache/
 .virtual_documents/
-ExtendedLLexample.txt
 _build/
-condaenv.*.requirements.txt
 data/
-docs/example.txt
 docs/lecture18

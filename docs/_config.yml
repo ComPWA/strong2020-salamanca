@@ -5,6 +5,7 @@ logo: https://indico.ific.uv.es/event/6803/logo-2761386249.png
 
 exclude_patterns:
   - .virtual_documents/*
+  - lecture24_utilities.ipynb
 
 execute:
   allow_errors: false
