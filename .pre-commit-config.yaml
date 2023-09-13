@@ -32,6 +32,7 @@ repos:
           - |
             cell.attachments
             cell.id
+            cell.metadata.cellView
             cell.metadata.code_folding
             cell.metadata.colab
             cell.metadata.editable
