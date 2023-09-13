@@ -38,7 +38,6 @@ repos:
             cell.metadata.executionInfo
             cell.metadata.id
             cell.metadata.outputId
-            cell.metadata.slideshow
             cell.metadata.user_expressions
             metadata.celltoolbar
             metadata.colab
