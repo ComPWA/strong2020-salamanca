@@ -13,6 +13,7 @@ execute:
   timeout: 600
 
 html:
+  use_issues_button: true
   use_repository_button: true
 
 launch_buttons:
