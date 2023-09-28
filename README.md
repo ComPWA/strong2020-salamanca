@@ -13,7 +13,7 @@ This (unofficial) repository contains the exercises for the [STRONG2020 HaSP Sch
 
    ```shell
    conda env create
-   conda activate strong2020
+   conda activate strong2020-salamanca
    ```
 
 3. Run notebooks in [Jupyter Lab](https://jupyter.org):
