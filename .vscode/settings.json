@@ -1,3 +1,10 @@
 {
-  "editor.formatOnSave": true
+  "[git-commit]": {
+    "editor.rulers": [72],
+    "rewrap.wrappingColumn": 72
+  },
+  "editor.formatOnSave": true,
+  "livePreview.defaultPreviewPath": "docs/_build/html",
+  "notebook.gotoSymbols.showAllSymbols": true,
+  "rewrap.wrappingColumn": 88
 }
