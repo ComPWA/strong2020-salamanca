@@ -22,7 +22,7 @@ repos:
         types_or: [jupyter]
 
   - repo: https://github.com/ComPWA/repo-maintenance
-    rev: 0.1.0rc5
+    rev: 0.1.0
     hooks:
       - id: check-dev-files
         args:
