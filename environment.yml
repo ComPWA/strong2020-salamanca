@@ -1,4 +1,4 @@
-name: strong2020
+name: strong2020-salamanca
 dependencies:
   - python==3.10.*
   - pip

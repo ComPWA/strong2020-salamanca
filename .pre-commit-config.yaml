@@ -5,7 +5,7 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: check-case-conflict
       - id: check-json
@@ -14,14 +14,42 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
+  - repo: https://github.com/psf/black
+    rev: 23.9.1
+    hooks:
+      - id: black-jupyter
+        args: [--line-length=85]
+        types_or: [jupyter]
+
+  - repo: https://github.com/ComPWA/repo-maintenance
+    rev: 0.1.0
+    hooks:
+      - id: check-dev-files
+        args:
+          - --ignore-author
+          - --no-github-actions
+          - --no-gitpod
+          - --no-prettierrc
+          - --no-python
+          - --no-ruff
+          - --no-version-branches
+          - --repo-name=strong2020-salamanca
+      - id: colab-toc-visible
+
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.7.0
     hooks:
-      - id: nbqa-black
       - id: nbqa-flake8
       - id: nbqa-isort
       - id: nbqa-pyupgrade
         args: [--py37-plus]
+
+  - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
+    rev: 2.7.2
+    hooks:
+      - id: editorconfig-checker
+        name: editorconfig
+        alias: ec
 
   - repo: https://github.com/kynan/nbstripout
     rev: 0.6.1
@@ -31,16 +59,13 @@ repos:
           - --extra-keys
           - |
             cell.attachments
-            cell.id
             cell.metadata.code_folding
-            cell.metadata.colab
-            cell.metadata.editable
-            cell.metadata.executionInfo
             cell.metadata.id
-            cell.metadata.outputId
+            cell.metadata.pycharm
             cell.metadata.user_expressions
             metadata.celltoolbar
-            metadata.colab
+            metadata.colab.name
+            metadata.colab.provenance
             metadata.interpreter
             metadata.notify_time
             metadata.toc
