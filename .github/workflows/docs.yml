@@ -2,8 +2,6 @@ name: Documentation
 
 on:
   push:
-    branches:
-      - main
   pull_request:
     branches:
       - main
@@ -11,10 +9,11 @@ on:
 
 jobs:
   doc:
+    if: github.event_name == 'push' && (github.repository != 'ComPWA/strong2020-salamanca' || github.ref_name == 'main') || github.event_name == 'pull_request'
     name: Execute and build
     runs-on: ubuntu-22.04
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
@@ -38,17 +37,17 @@ jobs:
           path: |
             ./docs/data
       - run: jupyter book build docs/ -W
-      - uses: actions/upload-pages-artifact@v1
+      - uses: actions/upload-pages-artifact@v2
         if: always()
         with:
           path: ./docs/_build/html
 
   gh-pages:
+    if: github.event_name == 'push' && (github.repository != 'ComPWA/strong2020-salamanca' || github.ref_name == 'main')
     name: Upload to GitHub Pages
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    if: github.ref == format('refs/heads/{0}', github.event.repository.default_branch)
     needs:
       - doc
     permissions:
