@@ -3,7 +3,29 @@
     "editor.rulers": [72],
     "rewrap.wrappingColumn": 72
   },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    },
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.rulers": [88]
+  },
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "black-formatter.importStrategy": "useBundled",
   "editor.formatOnSave": true,
+  "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
+  "isort.args": ["--profile", "black"],
   "livePreview.defaultPreviewPath": "docs/_build/html",
   "notebook.gotoSymbols.showAllSymbols": true,
   "rewrap.wrappingColumn": 88
