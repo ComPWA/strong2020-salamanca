@@ -17,7 +17,7 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: "3.10"
-      - run: pip install -r requirements.txt
+      - run: pip install -e .[doc] tox
       - name: Fetch Jupyter cache
         uses: actions/cache@v3
         with:
@@ -36,7 +36,7 @@ jobs:
             data
           path: |
             ./docs/data
-      - run: jupyter book build docs/ -W
+      - run: tox -e docnb
       - uses: actions/upload-pages-artifact@v2
         if: always()
         with:

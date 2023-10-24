@@ -1,9 +1,44 @@
+# Output files
 *.csv
 *.dat
 *.txt
+data/
+
+# Build files
+*.egg-info/
+*build/
+.eggs/
+.fuse_*
+dist/
+version.py
+
+# Temporary files
+*.pyc
+*condaenv.*
+.coverage
+.coverage.*
 .ipynb_checkpoints/
+.mypy*/
 .pytest_cache/
 .virtual_documents/
+__pycache__/
 _build/
-data/
-docs/lecture18
+htmlcov/
+jupyter_execute/
+prof/
+
+# Virtual environments
+*venv/
+.tox/
+pyvenv*/
+
+# Settings
+.idea/
+**.code-workspace
+
+# Exceptions
+!.github/*.yml
+!.github/*/*.yml
+!.pre-commit-config.yaml
+!.vscode/*.json
+!environment.yml

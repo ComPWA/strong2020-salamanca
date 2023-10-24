@@ -25,10 +25,20 @@ This (unofficial) repository contains the exercises for the [STRONG2020 HaSP Sch
 
 ## Documentation
 
-The website [compwa.github.io/strong2020-salamanca](https://compwa.github.io/strong2020-salamanca) is automatically generated from the notebooks in this repository using [Jupyter Book](https://jupyterbook.org). You can also run the notebooks and build the documentation locally as follows:
+The website [compwa.github.io/strong2020-salamanca](https://compwa.github.io/strong2020-salamanca) is automatically generated from the notebooks in this repository using [Sphinx](https://www.sphinx-doc.org) and [MyST-NB](https://myst-nb.rtfd.io). You can also run the notebooks and build the documentation locally as follows:
 
 ```shell
-jb build docs/
+tox -e docnb
 ```
 
-Adding the flag `-W` renders warnings as errors, which is useful for checking whether the notebooks run correctly.
+Alternatively, you can run the notebooks without building the documentation with
+
+```shell
+tox -e nb
+```
+
+or build the documentation without running the notebooks with
+
+```shell
+tox -e doc
+```
