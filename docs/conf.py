@@ -24,6 +24,7 @@ copyright = "2023"
 exclude_patterns = [
     "_build",
     "lecture24_utilities.ipynb",
+    "lecture12d-phasespace.ipynb",
 ]
 extensions = [
     "myst_nb",
