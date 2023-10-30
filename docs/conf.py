@@ -86,6 +86,7 @@ html_theme_options = {
         "colab_url": "https://colab.research.google.com",
         "notebook_interface": "jupyterlab",
     },
+    "navigation_with_keys": True,
     "path_to_docs": "docs",
     "repository_branch": "main",
     "repository_url": "https://github.com/ComPWA/strong2020-salamanca",
