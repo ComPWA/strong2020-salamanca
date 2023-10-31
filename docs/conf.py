@@ -90,6 +90,7 @@ html_theme_options = {
     "path_to_docs": "docs",
     "repository_branch": "main",
     "repository_url": "https://github.com/ComPWA/strong2020-salamanca",
+    "show_toc_level": 2,
     "use_issues_button": True,
 }
 html_title = "Solutions to STRONG2020 HaSP School"
