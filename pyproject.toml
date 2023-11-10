@@ -49,6 +49,7 @@ doc = [
     "sphinx-design",
     "sphinx-exercise",
     "sphinx-togglebutton",
+    "sphinx<6", # https://github.com/ComPWA/strong2020-salamanca/issues/29
 ]
 format = [
     "black",
