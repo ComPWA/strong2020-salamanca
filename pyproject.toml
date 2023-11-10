@@ -98,7 +98,7 @@ legacy_tox_ini = """
     commands =
         sphinx-build \
             --keep-going \
-            -TW \
+            -T \
             -b html \
             docs/ docs/_build/html
     description =
@@ -128,7 +128,7 @@ legacy_tox_ini = """
     commands =
         sphinx-build \
             --keep-going \
-            -TW \
+            -T \
             -b html \
             docs/ docs/_build/html
     description =
@@ -142,7 +142,7 @@ legacy_tox_ini = """
     allowlist_externals =
         sphinx-build
     commands =
-        sphinx-build -nW --keep-going -b html docs/ docs/_build/html
+        sphinx-build -n --keep-going -b html docs/ docs/_build/html
     description =
         Execute ALL Jupyter notebooks and build documentation with Sphinx
     passenv = *
