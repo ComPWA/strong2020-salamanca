@@ -48,7 +48,6 @@ doc = [
     "sphinx-copybutton",
     "sphinx-design",
     "sphinx-exercise",
-    "sphinx-external-toc",
     "sphinx-togglebutton",
 ]
 format = [

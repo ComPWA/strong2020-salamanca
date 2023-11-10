@@ -3,5 +3,8 @@
 
 ## Table of contents
 
-:::{tableofcontents}
-:::
+```{toctree}
+:glob:
+:maxdepth: 2
+lecture*
+```
