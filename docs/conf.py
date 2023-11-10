@@ -91,7 +91,7 @@ html_theme_options = {
     "show_toc_level": 2,
     "use_issues_button": True,
 }
-html_title = "Solutions to STRON2020 HaSP School"
+html_title = "Solutions to STRONG2020 HaSP School"
 linkcheck_anchors = False
 myst_enable_extensions = [
     "amsmath",
