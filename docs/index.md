@@ -2,6 +2,3 @@
 :::
 
 ## Table of contents
-
-:::{tableofcontents}
-:::
