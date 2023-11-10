@@ -33,11 +33,8 @@ extensions = [
     "sphinx_copybutton",
     "sphinx_design",
     "sphinx_exercise",
-    "sphinx_external_toc",
     "sphinx_togglebutton",
 ]
-external_toc_exclude_missing = True
-external_toc_path = "_toc.yml"
 html_favicon = "_static/favicon.ico"
 html_js_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"
