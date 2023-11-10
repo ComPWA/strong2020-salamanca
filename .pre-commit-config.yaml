@@ -42,7 +42,7 @@ repos:
       - id: nbqa-flake8
       - id: nbqa-isort
       - id: nbqa-pyupgrade
-        args: [--py37-plus]
+        args: [--py38-plus]
 
   - repo: https://github.com/psf/black
     rev: 23.9.1
