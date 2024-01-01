@@ -55,11 +55,15 @@ format = [
     "isort",
 ]
 jupyter = [
+    "isort",
     "jupyterlab",
     "jupyterlab-code-formatter",
+    "jupyterlab-git",
     "jupyterlab-lsp",
     "jupyterlab-myst",
+    "python-lsp-ruff",
     "python-lsp-server[flake8,rope]",
+    "python-lsp-server[rope]",
 ]
 sty = [
     "pre-commit",
