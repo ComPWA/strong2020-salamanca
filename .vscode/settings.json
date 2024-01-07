@@ -23,10 +23,12 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "black-formatter.importStrategy": "useBundled",
+  "diffEditor.experimental.showMoves": true,
   "editor.formatOnSave": true,
   "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
   "isort.args": ["--profile", "black"],
   "livePreview.defaultPreviewPath": "docs/_build/html",
+  "multiDiffEditor.experimental.enabled": true,
   "notebook.gotoSymbols.showAllSymbols": true,
   "rewrap.wrappingColumn": 88
 }
