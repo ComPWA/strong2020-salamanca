@@ -10,6 +10,7 @@ data/
 .eggs/
 .fuse_*
 dist/
+node_modules/
 version.py
 
 # Temporary files
