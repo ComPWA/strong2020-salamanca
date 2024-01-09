@@ -4,7 +4,6 @@
     "editorconfig.editorconfig",
     "esbenp.prettier-vscode",
     "executablebookproject.myst-highlight",
-    "garaioag.garaio-vscode-unwanted-recommendations",
     "github.vscode-github-actions",
     "github.vscode-pull-request-github",
     "mhutchie.git-graph",
@@ -15,6 +14,7 @@
     "ms-toolsai.vscode-jupyter-cell-tags",
     "ms-toolsai.vscode-jupyter-slideshow",
     "ms-vscode.live-server",
+    "Soulcode.vscode-unwanted-extensions",
     "stkb.rewrap",
     "tamasfe.even-better-toml",
     "tyriar.sort-lines",
@@ -23,6 +23,7 @@
   "unwantedRecommendations": [
     "bungcip.better-toml",
     "davidanson.vscode-markdownlint",
+    "garaioag.garaio-vscode-unwanted-recommendations",
     "ms-python.mypy-type-checker",
     "travisillig.vscode-json-stable-stringify"
   ]
