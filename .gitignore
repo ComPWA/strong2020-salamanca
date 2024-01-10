@@ -25,6 +25,7 @@ __pycache__/
 _build/
 htmlcov/
 jupyter_execute/
+node_modules/
 prof/
 
 # Virtual environments
