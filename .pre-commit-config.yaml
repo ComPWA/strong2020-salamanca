@@ -1,5 +1,5 @@
 ci:
-  autoupdate_commit_msg: "MAINT: update pre-commit config file"
+  autoupdate_commit_msg: "MAINT: autoupdate pre-commit hooks"
   autoupdate_schedule: quarterly
   skip:
     - prettier
@@ -12,7 +12,7 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/ComPWA/repo-maintenance
-    rev: 0.1.13a2
+    rev: 0.1.13a3
     hooks:
       - id: check-dev-files
         args:
