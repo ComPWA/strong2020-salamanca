@@ -55,11 +55,15 @@ format = [
     "isort",
 ]
 jupyter = [
+    "isort",
     "jupyterlab",
     "jupyterlab-code-formatter",
+    "jupyterlab-git",
     "jupyterlab-lsp",
     "jupyterlab-myst",
+    "python-lsp-ruff",
     "python-lsp-server[flake8,rope]",
+    "python-lsp-server[rope]",
 ]
 sty = [
     "pre-commit",
@@ -132,6 +136,22 @@ legacy_tox_ini = """
             docs/ docs/_build/html
     description =
         Build documentation through Sphinx WITH output of Jupyter notebooks
+    passenv = *
+    setenv =
+        EXECUTE_NB = yes
+        FORCE_COLOR = yes
+
+    [testenv:docnblive]
+    allowlist_externals =
+        sphinx-autobuild
+    commands =
+        sphinx-autobuild \
+            --open-browser \
+            --re-ignore docs/_build/.* \
+            --watch docs \
+            docs/ docs/_build/html
+    description =
+        Set up a server to directly preview changes to the HTML pages
     passenv = *
     setenv =
         EXECUTE_NB = yes

@@ -1,7 +1,8 @@
 ci:
-  autoupdate_commit_msg: "MAINT: update pre-commit config file"
+  autoupdate_commit_msg: "MAINT: update pip constraints and pre-commit"
   autoupdate_schedule: quarterly
   skip:
+    - prettier
     - taplo
 
 repos:
@@ -10,22 +11,12 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
 
-  - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
-    hooks:
-      - id: check-case-conflict
-      - id: check-json
-      - id: check-toml
-      - id: check-yaml
-      - id: end-of-file-fixer
-      - id: mixed-line-ending
-      - id: trailing-whitespace
-
-  - repo: https://github.com/ComPWA/repo-maintenance
-    rev: 0.1.2
+  - repo: https://github.com/ComPWA/policy
+    rev: 0.2.0
     hooks:
       - id: check-dev-files
         args:
+          - --dev-python-version=3.10
           - --ignore-author
           - --no-github-actions
           - --no-gitpod
@@ -38,15 +29,26 @@ repos:
       - id: colab-toc-visible
 
   - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.7.0
+    rev: 1.7.1
     hooks:
       - id: nbqa-flake8
       - id: nbqa-isort
       - id: nbqa-pyupgrade
         args: [--py38-plus]
 
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-case-conflict
+      - id: check-json
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+      - id: trailing-whitespace
+
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 23.11.0
+    rev: 23.12.1
     hooks:
       - id: black-jupyter
         args: [--line-length=85]
@@ -85,7 +87,7 @@ repos:
             metadata.vscode
 
   - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v3.0.3
+    rev: v4.0.0-alpha.8
     hooks:
       - id: prettier
 
