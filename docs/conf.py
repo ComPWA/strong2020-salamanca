@@ -72,8 +72,8 @@ html_theme_options = {
         },
         {
             "name": "Common Partial Wave Analysis",
-            "url": "https://compwa-org.rtfd.io",
-            "icon": "https://compwa-org.readthedocs.io/_static/favicon.ico",
+            "url": "https://compwa.github.io",
+            "icon": "https://compwa.github.io/_static/favicon.ico",
             "type": "url",
         },
     ],
