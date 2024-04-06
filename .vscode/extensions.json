@@ -17,7 +17,6 @@
     "Soulcode.vscode-unwanted-extensions",
     "stkb.rewrap",
     "tamasfe.even-better-toml",
-    "tyriar.sort-lines",
     "yzhang.markdown-all-in-one"
   ],
   "unwantedRecommendations": [
@@ -25,6 +24,7 @@
     "davidanson.vscode-markdownlint",
     "garaioag.garaio-vscode-unwanted-recommendations",
     "ms-python.mypy-type-checker",
-    "travisillig.vscode-json-stable-stringify"
+    "travisillig.vscode-json-stable-stringify",
+    "tyriar.sort-lines"
   ]
 }
