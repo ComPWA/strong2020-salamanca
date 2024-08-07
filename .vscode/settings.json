@@ -26,12 +26,16 @@
   "black-formatter.importStrategy": "useBundled",
   "diffEditor.experimental.showMoves": true,
   "editor.formatOnSave": true,
+  "files.associations": {
+    "**/.constraints/py*.txt": "pip-requirements"
+  },
   "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
   "gitlens.telemetry.enabled": false,
   "isort.args": ["--profile", "black"],
   "livePreview.defaultPreviewPath": "docs/_build/html",
   "multiDiffEditor.experimental.enabled": true,
   "notebook.gotoSymbols.showAllSymbols": true,
+  "python.terminal.activateEnvironment": false,
   "redhat.telemetry.enabled": false,
   "rewrap.wrappingColumn": 88,
   "telemetry.telemetryLevel": "off"
