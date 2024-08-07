@@ -104,3 +104,7 @@ repos:
       - id: editorconfig-checker
         name: editorconfig
         alias: ec
+        exclude: >-
+          (?x)^(
+            .*\.py
+          )$
