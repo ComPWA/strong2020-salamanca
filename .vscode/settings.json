@@ -1,6 +1,8 @@
 {
   "[git-commit]": {
-    "editor.rulers": [72],
+    "editor.rulers": [
+      72
+    ],
     "rewrap.wrappingColumn": 72
   },
   "[json]": {
@@ -18,7 +20,9 @@
       "source.organizeImports": "explicit"
     },
     "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.rulers": [88]
+    "editor.rulers": [
+      88
+    ]
   },
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -26,12 +30,21 @@
   "black-formatter.importStrategy": "useBundled",
   "diffEditor.experimental.showMoves": true,
   "editor.formatOnSave": true,
-  "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
+  "files.associations": {
+    "**/.constraints/py*.txt": "pip-requirements"
+  },
+  "github-actions.workflows.pinned.workflows": [
+    ".github/workflows/ci.yml"
+  ],
   "gitlens.telemetry.enabled": false,
-  "isort.args": ["--profile", "black"],
+  "isort.args": [
+    "--profile",
+    "black"
+  ],
   "livePreview.defaultPreviewPath": "docs/_build/html",
   "multiDiffEditor.experimental.enabled": true,
   "notebook.gotoSymbols.showAllSymbols": true,
+  "python.terminal.activateEnvironment": false,
   "redhat.telemetry.enabled": false,
   "rewrap.wrappingColumn": 88,
   "telemetry.telemetryLevel": "off"
