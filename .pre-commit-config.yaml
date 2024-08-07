@@ -53,7 +53,6 @@ repos:
           - --pin-requirements=quarterly
           - --repo-name=strong2020-salamanca
       - id: colab-toc-visible
-
       - id: remove-empty-tags
 
   - repo: https://github.com/nbQA-dev/nbQA
