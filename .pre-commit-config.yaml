@@ -61,7 +61,7 @@ repos:
       - id: nbqa-flake8
       - id: nbqa-isort
       - id: nbqa-pyupgrade
-        args: [--py38-plus]
+        args: [--py39-plus]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
