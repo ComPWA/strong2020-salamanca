@@ -41,13 +41,13 @@ dev = [
 doc = [
     "ipympl",
     "myst-nb",
+    "sphinx",
     "sphinx-book-theme",
     "sphinx-comments",
     "sphinx-copybutton",
     "sphinx-design",
     "sphinx-exercise",
     "sphinx-togglebutton",
-    "sphinx<6", # https://github.com/ComPWA/strong2020-salamanca/issues/29
 ]
 format = [
     "black",
