@@ -38,6 +38,7 @@ pyvenv*/
 **.code-workspace
 
 # Exceptions
+!.binder/runtime.txt
 !.github/*.yml
 !.github/*/*.yml
 !.pre-commit-config.yaml
