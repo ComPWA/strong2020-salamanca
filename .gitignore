@@ -31,6 +31,7 @@ prof/
 
 # Virtual environments
 *venv/
+.pixi/
 .tox/
 pyvenv*/
 

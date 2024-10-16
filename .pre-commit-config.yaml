@@ -1,9 +1,6 @@
 ci:
   autoupdate_commit_msg: "MAINT: update pip constraints and pre-commit"
   autoupdate_schedule: quarterly
-  skip:
-    - prettier
-    - taplo
 
 repos:
   - repo: meta
@@ -11,11 +8,28 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
 
+  - repo: https://github.com/ComPWA/policy
+    rev: 0.4.1
+    hooks:
+      - id: check-dev-files
+        args:
+          - --dev-python-version=3.12
+          - --no-github-actions
+          - --no-prettierrc
+          - --no-python
+          - --no-ruff
+          - --no-version-branches
+          - --pin-requirements=quarterly
+          - --repo-name=strong2020-salamanca
+      - id: colab-toc-visible
+      - id: remove-empty-tags
+
   - repo: https://github.com/kynan/nbstripout
     rev: 0.7.1
     hooks:
       - id: nbstripout
         args:
+          - --drop-empty-cells
           - --extra-keys
           - |
             cell.attachments
@@ -38,23 +52,6 @@ repos:
             metadata.varInspector
             metadata.vscode
 
-  - repo: https://github.com/ComPWA/policy
-    rev: 0.3.18
-    hooks:
-      - id: check-dev-files
-        args:
-          - --dev-python-version=3.12
-          - --no-github-actions
-          - --no-gitpod
-          - --no-prettierrc
-          - --no-python
-          - --no-ruff
-          - --no-version-branches
-          - --pin-requirements=quarterly
-          - --repo-name=strong2020-salamanca
-      - id: colab-toc-visible
-      - id: remove-empty-tags
-
   - repo: https://github.com/nbQA-dev/nbQA
     rev: 1.8.7
     hooks:
@@ -74,15 +71,15 @@ repos:
       - id: mixed-line-ending
       - id: trailing-whitespace
 
-  - repo: https://github.com/pre-commit/mirrors-prettier
-    rev: v4.0.0-alpha.8
+  - repo: https://github.com/ComPWA/prettier-pre-commit
+    rev: v3.3.3
     hooks:
       - id: prettier
 
-  - repo: https://github.com/ComPWA/mirrors-taplo
-    rev: v0.8.1
+  - repo: https://github.com/ComPWA/taplo-pre-commit
+    rev: v0.9.3
     hooks:
-      - id: taplo
+      - id: taplo-format
 
   - repo: https://github.com/pappasam/toml-sort
     rev: v0.23.1
@@ -99,7 +96,7 @@ repos:
         types_or: [jupyter]
 
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
-    rev: 2.7.3
+    rev: 3.0.3
     hooks:
       - id: editorconfig-checker
         name: editorconfig

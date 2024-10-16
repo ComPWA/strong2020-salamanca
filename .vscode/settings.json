@@ -27,7 +27,8 @@
   "diffEditor.experimental.showMoves": true,
   "editor.formatOnSave": true,
   "files.associations": {
-    "**/.constraints/py*.txt": "pip-requirements"
+    "**/.constraints/py*.txt": "pip-requirements",
+    "**/pixi.lock": "yaml"
   },
   "github-actions.workflows.pinned.workflows": [".github/workflows/ci.yml"],
   "gitlens.telemetry.enabled": false,

@@ -4,5 +4,3 @@ dependencies:
   - pip
   - pip:
       - -c .constraints/py3.12.txt -e .[dev]
-variables:
-  PRETTIER_LEGACY_CLI: "1"
