@@ -15,7 +15,6 @@ version.py
 
 # Temporary files
 *.pyc
-*condaenv.*
 .coverage
 .coverage.*
 .ipynb_checkpoints/
@@ -31,7 +30,6 @@ prof/
 
 # Virtual environments
 *venv/
-.pixi/
 .tox/
 pyvenv*/
 
@@ -44,4 +42,3 @@ pyvenv*/
 !.github/*/*.yml
 !.pre-commit-config.yaml
 !.vscode/*.json
-!environment.yml

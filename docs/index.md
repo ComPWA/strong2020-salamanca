@@ -1,4 +1,5 @@
 :::{include} ../README.md
+:end-before: See [`CONTRIBUTING.md`
 :::
 
 ## Table of contents

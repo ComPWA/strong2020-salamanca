@@ -1,5 +1,5 @@
 ci:
-  autoupdate_commit_msg: "MAINT: update pip constraints and pre-commit"
+  autoupdate_commit_msg: "MAINT: update lock files"
   autoupdate_schedule: quarterly
 
   skip: []
@@ -10,19 +10,17 @@ repos:
       - id: check-hooks-apply
       - id: check-useless-excludes
 
-  - repo: https://github.com/ComPWA/policy
-    rev: 0.4.1
+  - repo: /data/local/redeboer/work/ComPWA/policy
+    rev: 565f235682bdafe8ea5c0d7e88220c95a919a26f
     hooks:
       - id: check-dev-files
         args:
-          - --dev-python-version=3.12
-          - --no-github-actions
           - --no-prettierrc
-          - --no-python
-          - --no-ruff
+          - --no-pypi
           - --no-version-branches
           - --pin-requirements=quarterly
           - --repo-name=strong2020-salamanca
+          - --repo-title="STRONG2020 HaSP School"
       - id: colab-toc-visible
       - id: remove-empty-tags
 
@@ -54,13 +52,14 @@ repos:
             metadata.varInspector
             metadata.vscode
 
-  - repo: https://github.com/nbQA-dev/nbQA
-    rev: 1.8.7
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.6.9
     hooks:
-      - id: nbqa-flake8
-      - id: nbqa-isort
-      - id: nbqa-pyupgrade
-        args: [--py39-plus]
+      - id: ruff
+        args: [--fix]
+        types_or: [python, pyi, jupyter]
+      - id: ruff-format
+        types_or: [python, pyi, jupyter]
 
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.6.0
@@ -90,13 +89,6 @@ repos:
         args:
           - --in-place
 
-  - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 24.8.0
-    hooks:
-      - id: black-jupyter
-        args: [--line-length=85]
-        types_or: [jupyter]
-
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 3.0.3
     hooks:
@@ -107,3 +99,8 @@ repos:
           (?x)^(
             .*\.py
           )$
+
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.4.20
+    hooks:
+      - id: uv-lock

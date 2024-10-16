@@ -1,6 +1,0 @@
-name: strong2020-salamanca
-dependencies:
-  - python==3.12.*
-  - pip
-  - pip:
-      - -c .constraints/py3.12.txt -e .[dev]
