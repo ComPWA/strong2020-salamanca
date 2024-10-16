@@ -1,14 +1,4 @@
-import os
-
-
-def get_execution_mode() -> str:
-    if "FORCE_EXECUTE_NB" in os.environ:
-        print("\033[93;1mWill run ALL Jupyter notebooks!\033[0m")
-        return "force"
-    if "EXECUTE_NB" in os.environ:
-        return "cache"
-    return "off"
-
+from sphinx_api_relink.helpers import get_execution_mode
 
 REPO_NAME = "strong2020-salamanca"
 BRANCH = "main"
@@ -20,7 +10,7 @@ comments_config = {
 }
 copybutton_prompt_is_regexp = True
 copybutton_prompt_text = r">>> |\.\.\. "  # doctest
-copyright = "2023"
+copyright = "2023"  # noqa: A001
 exclude_patterns = [
     "_build",
     "lecture24_utilities.ipynb",
