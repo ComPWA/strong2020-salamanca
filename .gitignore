@@ -15,7 +15,6 @@ version.py
 
 # Temporary files
 *.pyc
-*condaenv.*
 .coverage
 .coverage.*
 .ipynb_checkpoints/
@@ -39,8 +38,8 @@ pyvenv*/
 **.code-workspace
 
 # Exceptions
+!.binder/runtime.txt
 !.github/*.yml
 !.github/*/*.yml
 !.pre-commit-config.yaml
 !.vscode/*.json
-!environment.yml
