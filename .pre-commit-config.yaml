@@ -2,8 +2,6 @@ ci:
   autoupdate_commit_msg: "MAINT: update lock files"
   autoupdate_schedule: quarterly
 
-  skip: []
-
 repos:
   - repo: meta
     hooks:
@@ -11,7 +9,7 @@ repos:
       - id: check-useless-excludes
 
   - repo: https://github.com/ComPWA/policy
-    rev: 0.5.0rc9
+    rev: 0.5.0rc10
     hooks:
       - id: check-dev-files
         args:
@@ -19,7 +17,6 @@ repos:
           - --no-pypi
           - --repo-name=strong2020-salamanca
           - --repo-title="STRONG2020 HaSP School"
-          - --update-lock-files=quarterly
       - id: colab-toc-visible
       - id: remove-empty-tags
 
@@ -52,7 +49,7 @@ repos:
             metadata.vscode
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.6.9
+    rev: v0.7.0
     hooks:
       - id: ruff
         args: [--fix]
@@ -100,6 +97,6 @@ repos:
           )$
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 0.4.22
+    rev: 0.4.24
     hooks:
       - id: uv-lock
