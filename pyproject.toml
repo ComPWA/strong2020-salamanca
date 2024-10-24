@@ -22,7 +22,6 @@ dev = [
     "strong2020-salamanca[jupyter]",
     "strong2020-salamanca[sty]",
     "strong2020-salamanca[test]",
-    "tox",
 ]
 doc = [
     "ipympl",
@@ -47,7 +46,6 @@ jupyter = [
     "python-lsp-server[rope]",
 ]
 sty = [
-    "pre-commit-uv",
     "ruff",
     "strong2020-salamanca[format]",
 ]
