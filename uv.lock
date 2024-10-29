@@ -2204,7 +2204,7 @@ name = "strong2020-salamanca"
 version = "0.0.0"
 source = { editable = "." }
 
-[package.dev-dependencies]
+[package.dependency-groups]
 dev = [
     { name = "ipympl" },
     { name = "jupyterlab" },
@@ -2261,7 +2261,7 @@ test = [
 
 [package.metadata]
 
-[package.metadata.requires-dev]
+[package.metadata.dependency-groups]
 dev = [
     { name = "ipympl" },
     { name = "jupyterlab" },
