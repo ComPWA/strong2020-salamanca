@@ -133,21 +133,6 @@ split-on-trailing-comma = false
     "T20",
     "TCH00",
 ]
-"**/lecture06-gammap.ipynb" = ["N802", "N803"]
-"**/lecture09.ipynb" = ["N802"]
-"**/lecture12a-gammap-solution.ipynb" = ["N802", "N803"]
-"**/lecture17.ipynb" = ["ARG002", "E731", "FBT001", "FBT002", "N801", "RUF027"]
-"**/lecture24.ipynb" = [
-    "B023",
-    "BLE001",
-    "E731",
-    "ERA001",
-    "N802",
-    "N803",
-    "PD011",
-    "S110",
-]
-"**/lecture24_utilities.ipynb" = ["N802"]
 "docs/*" = [
     "INP001",
     "S101",
