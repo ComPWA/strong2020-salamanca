@@ -43,7 +43,6 @@ jupyter = [
     "jupyterlab-myst",
     "python-lsp-ruff",
     "python-lsp-server[rope]",
-    "python-lsp-server[rope]",
 ]
 sty = ["ruff"]
 test = ["nbmake"]
