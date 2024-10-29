@@ -7,5 +7,5 @@
 ```{toctree}
 :glob:
 :maxdepth: 2
-lecture*
+lecture*/index
 ```

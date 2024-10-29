@@ -13,7 +13,10 @@ copybutton_prompt_text = r">>> |\.\.\. "  # doctest
 copyright = "2023"  # noqa: A001
 exclude_patterns = [
     "_build",
-    "lecture24_utilities.ipynb",
+    "**/.ipynb_checkpoints/",
+    "**/.venv/*",
+    "**/.virtual_documents/",
+    "lecture24/utilities.ipynb",
 ]
 extensions = [
     "myst_nb",
@@ -95,7 +98,7 @@ mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 nb_execution_excludepatterns = [
     "**.ipynb_checkpoints",
     ".virtual_documents/*",
-    "lecture24_utilities.ipynb",
+    "lecture24/utilities.ipynb",
 ]
 nb_execution_mode = get_execution_mode()
 nb_execution_show_tb = True
