@@ -52,6 +52,22 @@ test = [
     {include-group = "notebooks"},
 ]
 
+[tool.pytest.ini_options]
+addopts = [
+    "--color=yes",
+    "--durations=0",
+    "--nbmake",
+    "--nbmake-timeout=1200",
+]
+filterwarnings = [
+    "error",
+]
+norecursedirs = [
+    ".ipynb_checkpoints",
+    ".virtual_documents",
+    "_build",
+]
+
 [tool.ruff]
 extend-include = ["*.ipynb"]
 preview = true
@@ -245,7 +261,7 @@ description = Check external links in the documentation (requires internet conne
 allowlist_externals =
     pytest
 commands =
-    pytest --nbmake {posargs:docs}
+    pytest {posargs:docs}
 description = Run all notebooks with pytest
 
 [testenv:sty]
