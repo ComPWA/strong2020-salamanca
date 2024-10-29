@@ -5,7 +5,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 [![Binder](https://static.mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/ComPWA/strong2020-salamanca/main?urlpath=lab)
 [![Google Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/ComPWA/strong2020-salamanca/blob/main)
-[![GitHub Pages](https://github.com/ComPWA/strong2020-salamanca/actions/workflows/docs.yml/badge.svg)](https://github.com/ComPWA/strong2020-salamanca/actions/workflows/docs.yml)
+[![CI](https://github.com/ComPWA/strong2020-salamanca/actions/workflows/ci.yml/badge.svg)](https://github.com/ComPWA/strong2020-salamanca/actions/workflows/ci.yml)
 
 This (unofficial) repository contains the exercises for the [STRONG2020 HaSP School](https://indico.ific.uv.es/event/6803) which was organised in Salamanca in 2023. Many of the files hosted in this repository originate from the [lecture material](https://indico.ific.uv.es/event/6803/timetable).
 
