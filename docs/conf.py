@@ -87,6 +87,9 @@ html_theme_options = {
 }
 html_title = "Solutions to STRONG2020 HaSP School"
 linkcheck_anchors = False
+linkcheck_ignore = [
+    "https://indico.ific.uv.es/event/6803",
+]
 myst_enable_extensions = [
     "amsmath",
     "colon_fence",
