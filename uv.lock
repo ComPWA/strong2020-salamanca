@@ -2265,7 +2265,6 @@ requires-dist = [
     { name = "sphinx-exercise", marker = "extra == 'doc'" },
     { name = "sphinx-togglebutton", marker = "extra == 'doc'" },
     { name = "strong2020-salamanca", extras = ["doc"], marker = "extra == 'dev'" },
-    { name = "strong2020-salamanca", extras = ["format"], marker = "extra == 'sty'" },
     { name = "strong2020-salamanca", extras = ["jupyter"], marker = "extra == 'dev'" },
     { name = "strong2020-salamanca", extras = ["sty"], marker = "extra == 'dev'" },
     { name = "strong2020-salamanca", extras = ["test"], marker = "extra == 'dev'" },

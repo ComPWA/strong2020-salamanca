@@ -45,10 +45,7 @@ jupyter = [
     "python-lsp-server[rope]",
     "python-lsp-server[rope]",
 ]
-sty = [
-    "ruff",
-    "strong2020-salamanca[format]",
-]
+sty = ["ruff"]
 test = ["nbmake"]
 
 [tool.ruff]
