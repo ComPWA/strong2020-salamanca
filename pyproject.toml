@@ -34,6 +34,7 @@ doc = [
     "sphinx-design",
     "sphinx-exercise",
     "sphinx-togglebutton",
+    {include-group = "notebooks"},
 ]
 jupyter = [
     "jupyterlab",
@@ -43,8 +44,13 @@ jupyter = [
     "jupyterlab-myst",
     "python-lsp-ruff",
     "python-lsp-server[rope]",
+    {include-group = "notebooks"},
 ]
-test = ["nbmake"]
+notebooks = ["pyproject-local-kernel"]
+test = [
+    "nbmake",
+    {include-group = "notebooks"},
+]
 
 [tool.ruff]
 extend-include = ["*.ipynb"]
