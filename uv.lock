@@ -2191,7 +2191,7 @@ name = "strong2020-salamanca"
 version = "0.0.0"
 source = { editable = "." }
 
-[package.optional-dependencies]
+[package.dependency-groups]
 dev = [
     { name = "ipympl" },
     { name = "jupyterlab" },
@@ -2235,40 +2235,57 @@ jupyter = [
     { name = "python-lsp-ruff" },
     { name = "python-lsp-server", extra = ["rope"] },
 ]
-sty = [
-    { name = "ruff" },
-]
 test = [
     { name = "nbmake" },
 ]
 
 [package.metadata]
-requires-dist = [
-    { name = "ipympl", marker = "extra == 'doc'" },
-    { name = "jupyterlab", marker = "extra == 'jupyter'" },
-    { name = "jupyterlab-code-formatter", marker = "extra == 'jupyter'", specifier = ">=3.0.0" },
-    { name = "jupyterlab-git", marker = "extra == 'jupyter'" },
-    { name = "jupyterlab-lsp", marker = "extra == 'jupyter'" },
-    { name = "jupyterlab-myst", marker = "extra == 'jupyter'" },
-    { name = "myst-nb", marker = "extra == 'doc'" },
-    { name = "nbmake", marker = "extra == 'test'" },
-    { name = "python-lsp-ruff", marker = "extra == 'jupyter'" },
-    { name = "python-lsp-server", extras = ["rope"], marker = "extra == 'jupyter'" },
-    { name = "ruff", marker = "extra == 'sty'" },
-    { name = "sphinx", marker = "extra == 'doc'" },
-    { name = "sphinx-api-relink", marker = "extra == 'doc'" },
-    { name = "sphinx-autobuild", marker = "extra == 'dev'" },
-    { name = "sphinx-book-theme", marker = "extra == 'doc'" },
-    { name = "sphinx-comments", marker = "extra == 'doc'" },
-    { name = "sphinx-copybutton", marker = "extra == 'doc'" },
-    { name = "sphinx-design", marker = "extra == 'doc'" },
-    { name = "sphinx-exercise", marker = "extra == 'doc'" },
-    { name = "sphinx-togglebutton", marker = "extra == 'doc'" },
-    { name = "strong2020-salamanca", extras = ["doc"], marker = "extra == 'dev'" },
-    { name = "strong2020-salamanca", extras = ["jupyter"], marker = "extra == 'dev'" },
-    { name = "strong2020-salamanca", extras = ["sty"], marker = "extra == 'dev'" },
-    { name = "strong2020-salamanca", extras = ["test"], marker = "extra == 'dev'" },
+
+[package.metadata.dependency-groups]
+dev = [
+    { name = "ipympl" },
+    { name = "jupyterlab" },
+    { name = "jupyterlab-code-formatter" },
+    { name = "jupyterlab-git" },
+    { name = "jupyterlab-lsp" },
+    { name = "jupyterlab-myst" },
+    { name = "myst-nb" },
+    { name = "nbmake" },
+    { name = "python-lsp-ruff" },
+    { name = "python-lsp-server", extras = ["rope"] },
+    { name = "ruff" },
+    { name = "sphinx" },
+    { name = "sphinx-api-relink" },
+    { name = "sphinx-autobuild" },
+    { name = "sphinx-book-theme" },
+    { name = "sphinx-comments" },
+    { name = "sphinx-copybutton" },
+    { name = "sphinx-design" },
+    { name = "sphinx-exercise" },
+    { name = "sphinx-togglebutton" },
 ]
+doc = [
+    { name = "ipympl" },
+    { name = "myst-nb" },
+    { name = "sphinx" },
+    { name = "sphinx-api-relink" },
+    { name = "sphinx-book-theme" },
+    { name = "sphinx-comments" },
+    { name = "sphinx-copybutton" },
+    { name = "sphinx-design" },
+    { name = "sphinx-exercise" },
+    { name = "sphinx-togglebutton" },
+]
+jupyter = [
+    { name = "jupyterlab" },
+    { name = "jupyterlab-code-formatter" },
+    { name = "jupyterlab-git" },
+    { name = "jupyterlab-lsp" },
+    { name = "jupyterlab-myst" },
+    { name = "python-lsp-ruff" },
+    { name = "python-lsp-server", extras = ["rope"] },
+]
+test = [{ name = "nbmake" }]
 
 [[package]]
 name = "tabulate"

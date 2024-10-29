@@ -15,13 +15,13 @@ dynamic = ["version"]
 name = "strong2020-salamanca"
 requires-python = ">=3.12"
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
+    "ruff",
     "sphinx-autobuild",
-    "strong2020-salamanca[doc]",
-    "strong2020-salamanca[jupyter]",
-    "strong2020-salamanca[sty]",
-    "strong2020-salamanca[test]",
+    {include-group = "doc"},
+    {include-group = "jupyter"},
+    {include-group = "test"},
 ]
 doc = [
     "ipympl",
@@ -37,14 +37,13 @@ doc = [
 ]
 jupyter = [
     "jupyterlab",
-    "jupyterlab-code-formatter >=3.0.0",
+    "jupyterlab-code-formatter",
     "jupyterlab-git",
     "jupyterlab-lsp",
     "jupyterlab-myst",
     "python-lsp-ruff",
     "python-lsp-server[rope]",
 ]
-sty = ["ruff"]
 test = ["nbmake"]
 
 [tool.ruff]
