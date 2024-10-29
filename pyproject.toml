@@ -185,6 +185,7 @@ commands =
         --show-traceback \
         docs/ docs/_build/html
 description = Build documentation as website
+passenv = *
 setenv =
     PYTHONWARNINGS =
 
@@ -212,6 +213,7 @@ commands =
         --watch=docs \
         docs/ docs/_build/html
 description = Set up a server to directly preview changes to the HTML pages
+passenv = *
 setenv =
     PYTHONWARNINGS =
 
