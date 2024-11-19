@@ -26,6 +26,7 @@ dev = [
 doc = [
     "ipympl",
     "myst-nb",
+    "sphinx",
     "sphinx-api-relink",
     "sphinx-book-theme",
     "sphinx-comments",
@@ -33,7 +34,6 @@ doc = [
     "sphinx-design",
     "sphinx-exercise",
     "sphinx-togglebutton",
-    "sphinx~=5.0", # for sphinx-exercise
     {include-group = "notebooks"},
 ]
 jupyter = [
