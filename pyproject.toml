@@ -131,7 +131,7 @@ split-on-trailing-comma = false
     "PLW0603",
     "S101",
     "T20",
-    "TCH00",
+    "TC00",
 ]
 "docs/*" = [
     "INP001",
@@ -169,8 +169,6 @@ skipsdist = True
 
 [testenv]
 passenv = *
-setenv =
-    PYTHONHASHSEED = 0
 
 [testenv:doc]
 allowlist_externals =
