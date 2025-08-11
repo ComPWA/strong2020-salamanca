@@ -30,7 +30,6 @@ prof/
 
 # Virtual environments
 *venv/
-.tox/
 pyvenv*/
 
 # Settings

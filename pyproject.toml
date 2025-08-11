@@ -17,6 +17,7 @@ requires-python = ">=3.12"
 
 [dependency-groups]
 dev = [
+    "poethepoet",
     "ruff",
     "sphinx-autobuild",
     {include-group = "doc"},
@@ -52,12 +53,108 @@ test = [
     {include-group = "notebooks"},
 ]
 
+[tool.poe]
+executor.type = "uv"
+
+[tool.poe.tasks.all]
+help = "Run all continuous integration (CI) tasks locally"
+sequence = [
+    "style",
+    "linkcheck",
+    "docnb-force",
+]
+
+[tool.poe.tasks.doc]
+cmd = """
+sphinx-build \
+    --builder=html \
+    --fail-on-warning \
+    --keep-going \
+    --show-traceback \
+    docs/ \
+    docs/_build/html/
+"""
+env = {PYTHONWARNINGS = ""}
+help = "Build documentation and API"
+
+[tool.poe.tasks.doclive]
+cmd = """
+sphinx-autobuild \
+    --builder=html \
+    --open-browser \
+    --port=0 \
+    --re-ignore=/__pycache__(/.*)?$ \
+    --re-ignore=/_build(/.*)?$ \
+    --re-ignore=/_images(/.*)?$ \
+    --re-ignore=/\\.cache(/.*)?$ \
+    --re-ignore=/\\.egg-info(/.*)?$ \
+    --re-ignore=/\\.ipynb_checkpoints(/.*)?$ \
+    --re-ignore=/\\.venv(/.*)?$ \
+    --re-ignore=/\\.virtual_documents(/.*)?$ \
+    --re-ignore=/api(/.*)?$ \
+    --re-ignore=/docs$ \
+    --re-ignore=/version\\.py$ \
+    --re-ignore=\\.csv$ \
+    --re-ignore=\\.egg-info(/.*)?$ \
+    --re-ignore=\\.gif$ \
+    --re-ignore=\\.gitignore$ \
+    --re-ignore=\\.gv$ \
+    --re-ignore=\\.inv$ \
+    --re-ignore=\\.json$ \
+    --re-ignore=\\.pickle$ \
+    --re-ignore=\\.pkl$ \
+    --re-ignore=\\.png$ \
+    --re-ignore=\\.root$ \
+    --re-ignore=\\.svg$ \
+    --re-ignore=\\.tmp$ \
+    --re-ignore=\\.txt$ \
+    --re-ignore=\\.ya?ml$ \
+    --watch=src \
+    docs/ \
+    docs/_build/html/
+"""
+help = "Set up a server to directly preview changes to the HTML pages"
+
+[tool.poe.tasks.docnb]
+env = {EXECUTE_NB = "yes"}
+help = "Build documentation and API with cached notebook execution"
+sequence = ["doc"]
+
+[tool.poe.tasks.docnb-force]
+env = {FORCE_EXECUTE_NB = "yes"}
+help = "Build documentation and API with notebook execution (no cache)"
+sequence = ["doc"]
+
+[tool.poe.tasks.docnblive]
+env = {EXECUTE_NB = "yes"}
+help = "Set up a server to directly preview changes to the HTML pages with cached notebook execution"
+sequence = ["doclive"]
+
+[tool.poe.tasks.linkcheck]
+cmd = """
+sphinx-build \
+    --builder=linkcheck \
+    --show-traceback \
+    docs/ \
+    docs/_build/linkcheck/
+"""
+env = {PYTHONWARNINGS = ""}
+help = "Check external links in the documentation (requires internet connection)"
+
+[tool.poe.tasks.nb]
+cmd = "uv run --group test --isolated --no-dev pytest"
+help = "Run all notebooks"
+
+[tool.poe.tasks.style]
+cmd = "uv run --isolated --no-dev pre-commit run --all-files"
+help = "Perform all linting, formatting, and spelling checks"
+
 [tool.pytest.ini_options]
 addopts = [
     "--color=yes",
     "--durations=0",
     "--nbmake",
-    "--nbmake-timeout=1200",
+    "--nbmake-timeout=0",
 ]
 filterwarnings = [
     "error",
@@ -150,124 +247,6 @@ in_place = true
 sort_first = [
     "build-system",
     "project",
-    "tool.tox.env_run_base",
 ]
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
-
-[tool.tox]
-env_list = [
-    "docnb-force",
-    "linkcheck",
-    "sty",
-]
-no_package = true
-requires = ["tox>=4.21.0"]
-skip_install = true
-skip_missing_interpreters = true
-
-[tool.tox.env_run_base]
-pass_env = ["*"]
-
-[tool.tox.env.doc]
-allowlist_externals = ["sphinx-build"]
-commands = [
-    [
-        "sphinx-build",
-        "--builder=html",
-        "--fail-on-warning",
-        "--keep-going",
-        "--show-traceback",
-        "docs/",
-        "docs/_build/html/",
-    ],
-]
-description = "Build documentation as website"
-set_env.PYTHONWARNINGS = ""
-
-[tool.tox.env.doclive]
-allowlist_externals = ["sphinx-autobuild"]
-commands = [
-    [
-        "sphinx-autobuild",
-        "--port=0",
-        "--re-ignore=/__pycache__(/.*)?$",
-        "--re-ignore=/_build(/.*)?$",
-        "--re-ignore=/_images(/.*)?$",
-        "--re-ignore=/\\.cache(/.*)?$",
-        "--re-ignore=/\\.egg-info(/.*)?$",
-        "--re-ignore=/\\.ipynb_checkpoints(/.*)?$",
-        "--re-ignore=/\\.venv(/.*)?$",
-        "--re-ignore=/\\.virtual_documents(/.*)?$",
-        "--re-ignore=/api(/.*)?$",
-        "--re-ignore=/docs$",
-        "--re-ignore=/version\\.py$",
-        "--re-ignore=\\.csv$",
-        "--re-ignore=\\.egg-info(/.*)?$",
-        "--re-ignore=\\.gif$",
-        "--re-ignore=\\.gitignore$",
-        "--re-ignore=\\.gv$",
-        "--re-ignore=\\.inv$",
-        "--re-ignore=\\.json$",
-        "--re-ignore=\\.pickle$",
-        "--re-ignore=\\.pkl$",
-        "--re-ignore=\\.png$",
-        "--re-ignore=\\.root$",
-        "--re-ignore=\\.svg$",
-        "--re-ignore=\\.tmp$",
-        "--re-ignore=\\.txt$",
-        "--re-ignore=\\.ya?ml$",
-        "docs/",
-        "docs/_build/html/",
-    ],
-]
-description = "Set up a server to directly preview changes to the HTML pages"
-set_env.PYTHONWARNINGS = ""
-
-[tool.tox.env.docnb]
-base = ["tool.tox.env.doc", "tool.tox.env_run_base"]
-description = "{[tool.tox.env.doc]description} with cached notebook execution"
-set_env = [
-    {replace = "ref", of = ["tool.tox.env.doc.set_env"]},
-    {EXECUTE_NB = "yes"},
-]
-
-[tool.tox.env.docnb-force]
-base = ["tool.tox.env.doc", "tool.tox.env_run_base"]
-description = "{[tool.tox.env.doc]description} with notebook execution (no cache)"
-set_env = [
-    {replace = "ref", of = ["tool.tox.env.doc.set_env"]},
-    {FORCE_EXECUTE_NB = "yes"},
-]
-
-[tool.tox.env.docnblive]
-base = ["tool.tox.env.doclive", "tool.tox.env_run_base"]
-description = "{[tool.tox.env.doclive]description} with cached notebook execution"
-set_env = [
-    {replace = "ref", of = ["tool.tox.env.doclive.set_env"]},
-    {EXECUTE_NB = "yes"},
-]
-
-[tool.tox.env.linkcheck]
-allowlist_externals = ["sphinx-build"]
-commands = [
-    [
-        "sphinx-build",
-        "--builder=linkcheck",
-        "--show-traceback",
-        "docs/",
-        "docs/_build/linkcheck/",
-    ],
-]
-description = "Check external links in the documentation (requires internet connection)"
-set_env.PYTHONWARNINGS = ""
-
-[tool.tox.env.nb]
-allowlist_externals = ["pytest"]
-commands = [["pytest", "{posargs:docs}"]]
-description = "Run all notebooks with pytest"
-
-[tool.tox.env.sty]
-allowlist_externals = ["pre-commit"]
-commands = [["pre-commit", "run", "--all-files", {replace = "posargs", extend = true}]]
-description = "Perform all linting, formatting, and spelling checks"
