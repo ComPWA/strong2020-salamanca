@@ -1,5 +1,8 @@
 # STRONG2020 HaSP School
 
+> [!WARNING]
+> This repository is archived and no longer actively maintained. It serves as a historical record of the exercises from the STRONG2020 HaSP School held in Salamanca in 2023.
+
 [![uv](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/astral-sh/uv/main/assets/badge/v0.json)](https://github.com/astral-sh/uv)
 [![Ruff](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v2.json)](https://github.com/astral-sh/ruff)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)

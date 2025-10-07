@@ -1,7 +1,7 @@
 ci:
   autofix_commit_msg: "MAINT: implement pre-commit autofixes"
   autoupdate_commit_msg: "MAINT: upgrade lock files"
-  autoupdate_schedule: quarterly
+  autoupdate_schedule: never
   skip:
     - uv-lock
 

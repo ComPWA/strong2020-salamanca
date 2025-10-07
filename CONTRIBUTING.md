@@ -1,5 +1,8 @@
 # How to contribute?
 
+> [!WARNING]
+> This repository is archived and no longer accepting contributions. The content is preserved for historical reference.
+
 [![Open in Visual Studio Code](https://img.shields.io/badge/vscode-open-blue?logo=visualstudiocode)](https://github.dev/ComPWA/strong2020-salamanca)
 
 > [!TIP]
