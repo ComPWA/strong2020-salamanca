@@ -13,7 +13,7 @@ authors = [
 description = "Jupyter notebooks for the STRONG2020 school in Salamanca, 2023"
 dynamic = ["version"]
 name = "strong2020-salamanca"
-requires-python = ">=3.12"
+requires-python = "~=3.13.0"
 
 [dependency-groups]
 dev = [
@@ -43,6 +43,7 @@ jupyter = [
     "jupyterlab-git",
     "jupyterlab-lsp",
     "jupyterlab-myst",
+    "jupyterlab-quickopen",
     "python-lsp-ruff",
     "python-lsp-server[rope]",
     {include-group = "notebooks"},
@@ -129,6 +130,11 @@ sequence = ["doc"]
 env = {EXECUTE_NB = "yes"}
 help = "Set up a server to directly preview changes to the HTML pages with cached notebook execution"
 sequence = ["doclive"]
+
+[tool.poe.tasks.lab]
+args = [{name = "paths", default = "", positional = true}]
+cmd = "jupyter lab ${paths}"
+help = "Run Jupyter Lab"
 
 [tool.poe.tasks.linkcheck]
 cmd = """
