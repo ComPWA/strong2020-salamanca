@@ -10,11 +10,11 @@ data/
 .eggs/
 .fuse_*
 dist/
+node_modules/
 version.py
 
 # Temporary files
 *.pyc
-*condaenv.*
 .coverage
 .coverage.*
 .ipynb_checkpoints/
@@ -25,11 +25,11 @@ __pycache__/
 _build/
 htmlcov/
 jupyter_execute/
+node_modules/
 prof/
 
 # Virtual environments
 *venv/
-.tox/
 pyvenv*/
 
 # Settings
@@ -37,8 +37,8 @@ pyvenv*/
 **.code-workspace
 
 # Exceptions
+!.binder/runtime.txt
 !.github/*.yml
 !.github/*/*.yml
 !.pre-commit-config.yaml
 !.vscode/*.json
-!environment.yml

@@ -1,0 +1,31 @@
+[project]
+dependencies = [
+    "gdown",
+    "matplotlib",
+    "numpy",
+    "particle",
+]
+name = "lecture"
+requires-python = "~=3.13.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+allowed-confusables = ["–"]
+ignore = [
+    "ANN001",
+    "COM812",
+    "CPY001",
+    "D",
+    "ISC001",
+    "PLR2004",
+    "T201",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+builtins-ignorelist = ["display"]
+
+[tool.uv.workspace]
