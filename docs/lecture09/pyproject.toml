@@ -1,0 +1,34 @@
+[project]
+dependencies = [
+    "gdown",
+    "lmfit",
+    "matplotlib",
+    "numpy",
+    "scipy",
+]
+name = "lecture"
+requires-python = "~=3.13.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "ANN001",
+    "ANN201",
+    "COM812",
+    "CPY001",
+    "D",
+    "E501",
+    "ISC001",
+    "N802",
+    "N806",
+    "N816",
+    "PLW1514",
+    "PTH123",
+    "T201",
+]
+select = ["ALL"]
+
+[tool.uv.workspace]

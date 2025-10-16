@@ -1,0 +1,25 @@
+[project]
+dependencies = [
+    "gdown",
+    "matplotlib",
+    "numpy",
+    "pandas",
+    "pylorentz",
+]
+name = "lecture"
+requires-python = "~=3.13.0"
+version = "0.1.0"
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+ignore = [
+    "COM812",
+    "CPY001",
+    "D",
+    "ISC001",
+]
+select = ["ALL"]
+
+[tool.uv.workspace]
