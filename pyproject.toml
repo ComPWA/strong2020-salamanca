@@ -17,9 +17,7 @@ requires-python = "~=3.13.0"
 
 [dependency-groups]
 dev = [
-    "poethepoet",
     "ruff",
-    "sphinx-autobuild",
     {include-group = "doc"},
     {include-group = "jupyter"},
     {include-group = "test"},
@@ -38,27 +36,29 @@ doc = [
     {include-group = "notebooks"},
 ]
 jupyter = [
+    "jupyter-ruff",
     "jupyterlab",
-    "jupyterlab-code-formatter",
     "jupyterlab-git",
     "jupyterlab-lsp",
     "jupyterlab-myst",
     "jupyterlab-quickopen",
     "python-lsp-ruff",
-    "python-lsp-server[rope]",
+    "python-lsp-server",
     {include-group = "notebooks"},
 ]
 notebooks = ["pyproject-local-kernel"]
 test = [
-    "nbmake",
     {include-group = "notebooks"},
 ]
 
 [tool.poe]
+executor.isolated = true
+executor.no-group = "dev"
 executor.type = "uv"
 
 [tool.poe.tasks.all]
 help = "Run all continuous integration (CI) tasks locally"
+ignore_fail = "return_non_zero"
 sequence = [
     "style",
     "linkcheck",
@@ -76,6 +76,7 @@ sphinx-build \
     docs/_build/html/
 """
 env = {PYTHONWARNINGS = ""}
+executor = {group = "doc"}
 help = "Build documentation and API"
 
 [tool.poe.tasks.doclive]
@@ -114,6 +115,7 @@ sphinx-autobuild \
     docs/ \
     docs/_build/html/
 """
+executor = {group = "doc", with = "sphinx-autobuild"}
 help = "Set up a server to directly preview changes to the HTML pages"
 
 [tool.poe.tasks.docnb]
@@ -134,7 +136,8 @@ sequence = ["doclive"]
 [tool.poe.tasks.lab]
 args = [{name = "paths", default = "", positional = true}]
 cmd = "jupyter lab ${paths}"
-help = "Run Jupyter Lab"
+executor = {group = "jupyter"}
+help = "Launch Jupyter Lab"
 
 [tool.poe.tasks.linkcheck]
 cmd = """
@@ -145,14 +148,17 @@ sphinx-build \
     docs/_build/linkcheck/
 """
 env = {PYTHONWARNINGS = ""}
+executor = {group = "doc"}
 help = "Check external links in the documentation (requires internet connection)"
 
 [tool.poe.tasks.nb]
-cmd = "uv run --group test --isolated --no-dev pytest"
+args = [{name = "paths", default = "docs", multiple = true, positional = true}]
+cmd = "pytest --nbmake --nbmake-timeout=0 ${paths}"
+executor = {group = "notebooks", with = "nbmake"}
 help = "Run all notebooks"
 
 [tool.poe.tasks.style]
-cmd = "uv run --isolated --no-dev pre-commit run --all-files"
+cmd = "pre-commit run --all-files"
 help = "Perform all linting, formatting, and spelling checks"
 
 [tool.pytest.ini_options]
@@ -204,6 +210,7 @@ ignore = [
     "PLW1514",
     "PT001",
     "PTH",
+    "RUF067",
     "SIM108",
 ]
 select = ["ALL"]
