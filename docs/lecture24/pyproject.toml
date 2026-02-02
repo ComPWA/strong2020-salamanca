@@ -4,7 +4,7 @@ dependencies = [
     "iminuit",
     "import-ipynb",
     "matplotlib",
-    "numpy",
+    "numpy~=2.3.0",
     "sweights",
 ]
 name = "lecture"
