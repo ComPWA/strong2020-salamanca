@@ -220,10 +220,16 @@ wheels = [
 ]
 
 [[package]]
-name = "python-constraint"
-version = "1.4.0"
+name = "python-constraint2"
+version = "2.6.0"
 source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/37/8b/5f1bc2734ca611943e1d6733ee244238679f6410a10cd45ede55a61a8402/python-constraint-1.4.0.tar.bz2", hash = "sha256:501d6f17afe0032dfc6ea6c0f8acc12e44f992733f00e8538961031ef27ccb8e", size = 18416, upload-time = "2018-11-05T09:02:44.334Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/d9/2c/8e914e56dc903b1ad5ffedbbae1403713eb3cdf0307e167c11ebd4a907aa/python_constraint2-2.6.0.tar.gz", hash = "sha256:e3725aa8d0febacad36bad1b2b881e51a857f4e3b676643b687ea34c1aff8721", size = 823941, upload-time = "2026-06-29T13:32:53.193Z" }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/6b/7f/8080e5548d79dad2af7897f5c20344ce39a82d73ca19dc7b78d333f6104e/python_constraint2-2.6.0-cp313-cp313-macosx_26_0_arm64.whl", hash = "sha256:3407bcaac8bac4a480b6993a607b2632e90c87f6d87fb8cfe90ce7b0cd945cc8", size = 1831514, upload-time = "2026-06-29T13:32:39.83Z" },
+    { url = "https://files.pythonhosted.org/packages/83/95/27d86efba46c1065a56e627a85dec95532a36965e54fd790ced3e24b76b8/python_constraint2-2.6.0-cp313-cp313-manylinux_2_35_x86_64.whl", hash = "sha256:b603c1e141d2430cad8406491ee99d8e5efb62a671b3e8a59a2e807253a15d7d", size = 4129813, upload-time = "2026-06-29T13:32:41.661Z" },
+    { url = "https://files.pythonhosted.org/packages/da/66/9f18935d72eee87d6ad804037fd05855ea9034d467018c7a486b57584c92/python_constraint2-2.6.0-cp313-cp313-manylinux_2_39_x86_64.whl", hash = "sha256:4e65c238f947ff8420279642fc3b37f497d35fd8c58b69b0ac5165fe2136745b", size = 4265995, upload-time = "2026-06-29T13:32:44.169Z" },
+    { url = "https://files.pythonhosted.org/packages/5a/32/d3ab093921d760769135b9d658614bd71ef64c76813319e4382401693039/python_constraint2-2.6.0-cp313-cp313-win_amd64.whl", hash = "sha256:4cb96e780973ba949a19bd74b8c3f5f3ff47b40eec5ec3b0bd30b5ee4c56ecb3", size = 843614, upload-time = "2026-06-29T13:32:45.657Z" },
+]
 
 [[package]]
 name = "pyyaml"
@@ -245,20 +251,20 @@ wheels = [
 
 [[package]]
 name = "qrules"
-version = "0.10.7"
+version = "0.10.8"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "attrs" },
     { name = "frozendict" },
     { name = "jsonschema" },
     { name = "particle" },
-    { name = "python-constraint" },
+    { name = "python-constraint2" },
     { name = "pyyaml" },
     { name = "tqdm" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/aa/20/9d279bdd140a18959472cd1cc3e689b73e9554bc987a173e35e85ce713c9/qrules-0.10.7.tar.gz", hash = "sha256:bb2ee2957aa3bd55d7eb38bb111823c26d9364d0d16c88730ddc97acf47c31c9", size = 294071, upload-time = "2026-02-06T14:50:50.924Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/3a/27/b1fa7950c7d053ba65e37b6b27870f3814b85d14e42bcd9dec5a4ca1d3fc/qrules-0.10.8.tar.gz", hash = "sha256:5a348e57eb051831222c220ddf9cf77ef7e6b99c561109e13af722eb6b404bb7", size = 321599, upload-time = "2026-07-06T11:06:44.055Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/2c/5d/c1371af6f81376bebffd055911e355ff5972d2646135d961757ffe0a858f/qrules-0.10.7-py3-none-any.whl", hash = "sha256:a7936995dba23868d8d37319a9250aa4e0d90da9845a89da1ac476ce48abf694", size = 80795, upload-time = "2026-02-06T14:50:49.063Z" },
+    { url = "https://files.pythonhosted.org/packages/13/7e/6b016f29e59c75aca3e2a231097210ad432648e0b8d51a75ae7dc2de5a7b/qrules-0.10.8-py3-none-any.whl", hash = "sha256:5fac27c409ff7b8d5a8696922dbff69c032db2ef180cba13c94c6f5b22e3b31d", size = 82322, upload-time = "2026-07-06T11:06:42.78Z" },
 ]
 
 [[package]]
