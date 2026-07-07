@@ -51,6 +51,14 @@ test = [
     {include-group = "notebooks"},
 ]
 
+[tool.compwa.policy]
+repo-name = "strong2020-salamanca"
+repo-title = "STRONG2020 HaSP School"
+
+[tool.compwa.policy.github]
+no-cd = true
+no-pypi = true
+
 [tool.poe.executor]
 isolated = true
 no-group = "dev"
@@ -117,6 +125,11 @@ env = {EXECUTE_NB = "yes"}
 help = "Build documentation and API with cached notebook execution"
 sequence = ["doc"]
 
+[tool.poe.groups.doc.tasks.docnb-force]
+env = {FORCE_EXECUTE_NB = "yes"}
+help = "Build documentation and API with notebook execution (no cache)"
+sequence = ["doc"]
+
 [tool.poe.groups.doc.tasks.docnblive]
 env = {EXECUTE_NB = "yes"}
 help = "Set up a server to directly preview changes to the HTML pages with cached notebook execution"
@@ -157,11 +170,6 @@ sequence = [
     "linkcheck",
     "docnb-force",
 ]
-
-[tool.poe.tasks.docnb-force]
-env = {FORCE_EXECUTE_NB = "yes"}
-help = "Build documentation and API with notebook execution (no cache)"
-sequence = ["doc"]
 
 [tool.poe.tasks.style]
 cmd = "pre-commit run --all-files"
