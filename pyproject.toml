@@ -1,26 +1,19 @@
-[build-system]
-build-backend = "setuptools.build_meta"
-requires = [
-    "setuptools>=61.2",
-    "setuptools_scm",
-]
-
 [project]
-authors = [
-    {name = "Common Partial Wave Analysis", email = "compwa-admin@ep1.rub.de"},
-    {name = "STRONG2020"},
-]
-description = "Jupyter notebooks for the STRONG2020 school in Salamanca, 2023"
-dynamic = ["version"]
 name = "strong2020-salamanca"
+description = "Jupyter notebooks for the STRONG2020 school in Salamanca, 2023"
 requires-python = "~=3.13.0"
+authors = [
+    { name = "Common Partial Wave Analysis", email = "compwa-admin@ep1.rub.de" },
+    { name = "STRONG2020" }
+]
+dynamic = ["version"]
 
 [dependency-groups]
 dev = [
     "ruff",
-    {include-group = "doc"},
-    {include-group = "jupyter"},
-    {include-group = "test"},
+    { include-group = "doc" },
+    { include-group = "jupyter" },
+    { include-group = "test" }
 ]
 doc = [
     "ipympl",
@@ -33,7 +26,7 @@ doc = [
     "sphinx-design",
     "sphinx-exercise",
     "sphinx-togglebutton",
-    {include-group = "notebooks"},
+    { include-group = "notebooks" }
 ]
 jupyter = [
     "jupyter-ruff",
@@ -44,12 +37,17 @@ jupyter = [
     "jupyterlab-quickopen",
     "python-lsp-ruff",
     "python-lsp-server",
-    {include-group = "notebooks"},
+    { include-group = "notebooks" }
 ]
 notebooks = ["pyproject-local-kernel"]
-test = [
-    {include-group = "notebooks"},
+test = [{ include-group = "notebooks" }]
+
+[build-system]
+requires = [
+    "setuptools>=61.2",
+    "setuptools_scm",
 ]
+build-backend = "setuptools.build_meta"
 
 [tool.compwa.policy]
 repo-name = "strong2020-salamanca"
@@ -77,8 +75,8 @@ sphinx-build \
     docs/ \
     docs/_build/html/
 """
-env = {PYTHONWARNINGS = ""}
-executor = {group = "doc"}
+env = { PYTHONWARNINGS = "" }
+executor = { group = "doc" }
 help = "Build documentation and API"
 
 [tool.poe.groups.doc.tasks.doclive]
@@ -117,21 +115,21 @@ sphinx-autobuild \
     docs/ \
     docs/_build/html/
 """
-executor = {group = "doc", with = "sphinx-autobuild"}
+executor = { group = "doc", with = "sphinx-autobuild" }
 help = "Set up a server to directly preview changes to the HTML pages"
 
 [tool.poe.groups.doc.tasks.docnb]
-env = {EXECUTE_NB = "yes"}
+env = { EXECUTE_NB = "yes" }
 help = "Build documentation and API with cached notebook execution"
 sequence = ["doc"]
 
 [tool.poe.groups.doc.tasks.docnb-force]
-env = {FORCE_EXECUTE_NB = "yes"}
+env = { FORCE_EXECUTE_NB = "yes" }
 help = "Build documentation and API with notebook execution (no cache)"
 sequence = ["doc"]
 
 [tool.poe.groups.doc.tasks.docnblive]
-env = {EXECUTE_NB = "yes"}
+env = { EXECUTE_NB = "yes" }
 help = "Set up a server to directly preview changes to the HTML pages with cached notebook execution"
 sequence = ["doclive"]
 
@@ -143,23 +141,23 @@ sphinx-build \
     docs/ \
     docs/_build/linkcheck/
 """
-env = {PYTHONWARNINGS = ""}
-executor = {group = "doc"}
+env = { PYTHONWARNINGS = "" }
+executor = { group = "doc" }
 help = "Check external links in the documentation (requires internet connection)"
 
 [tool.poe.groups.notebook]
 heading = "Notebooks"
 
 [tool.poe.groups.notebook.tasks.lab]
-args = [{name = "paths", default = "", positional = true}]
+args = [{ name = "paths", default = "", positional = true }]
 cmd = "jupyter lab ${paths}"
-executor = {group = "jupyter"}
+executor = { group = "jupyter" }
 help = "Launch Jupyter Lab"
 
 [tool.poe.groups.notebook.tasks.nb]
-args = [{name = "paths", default = "docs", multiple = true, positional = true}]
+args = [{ name = "paths", default = "docs", multiple = true, positional = true }]
 cmd = "pytest --nbmake --nbmake-timeout=0 ${paths}"
-executor = {group = "notebooks", with = "nbmake"}
+executor = { group = "notebooks", with = "nbmake" }
 help = "Run all notebooks"
 
 [tool.poe.tasks.all]
@@ -176,12 +174,17 @@ cmd = "pre-commit run --all-files"
 help = "Perform all linting, formatting, and spelling checks"
 
 [tool.poe.tasks.upgrade]
-executor = {type = "simple"}
+executor = { type = "simple" }
 help = "Upgrade lock files"
-parallel = [
-    {cmd = "pre-commit autoupdate -j8"},
-    {cmd = "uv lock --upgrade"},
-]
+parallel = ["_upgrade-precommit", "_upgrade-uv"]
+
+[tool.poe.tasks._upgrade-precommit]
+cmd = "pre-commit autoupdate -j8"
+executor = { type = "simple" }
+
+[tool.poe.tasks._upgrade-uv]
+cmd = "uv lock --upgrade"
+executor = { type = "simple" }
 
 [tool.pytest.ini_options]
 addopts = [
@@ -190,9 +193,7 @@ addopts = [
     "--nbmake",
     "--nbmake-timeout=0",
 ]
-filterwarnings = [
-    "error",
-]
+filterwarnings = ["error"]
 norecursedirs = [
     ".ipynb_checkpoints",
     ".virtual_documents",
@@ -239,7 +240,7 @@ select = ["ALL"]
 task-tags = ["cspell"]
 
 [tool.ruff.lint.flake8-builtins]
-builtins-ignorelist = ["display"]
+ignorelist = ["display"]
 
 [tool.ruff.lint.flake8-comprehensions]
 allow-dict-calls-with-keyword-arguments = true
@@ -277,13 +278,17 @@ split-on-trailing-comma = false
 [tool.ruff.lint.pydocstyle]
 convention = "google"
 
-[tool.tomlsort]
-all = false
-ignore_case = true
-in_place = true
-sort_first = [
-    "build-system",
-    "project",
-]
-spaces_indent_inline_array = 4
-trailing_comma_inline_array = true
+[tool.tombi.files]
+exclude = ["**/uv.lock"]
+
+[tool.tombi.format.rules]
+indent-width = 4
+line-width = 88
+
+[tool.tombi.lint.rules]
+key-empty = "off"
+
+[[tool.tombi.schemas]]
+root = "tool.compwa.policy"
+path = "https://raw.githubusercontent.com/ComPWA/policy/b1a4216872b0e6539e0b70a051a6d3aaed874356/compwa-policy.schema.json"
+include = ["pyproject.toml"]
