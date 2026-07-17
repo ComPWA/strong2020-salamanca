@@ -10,7 +10,7 @@ comments_config = {
 }
 copybutton_prompt_is_regexp = True
 copybutton_prompt_text = r">>> |\.\.\. "  # doctest
-copyright = "2023"  # noqa: A001
+copyright = "2023"  # ruff:ignore[builtin-variable-shadowing]
 exclude_patterns = [
     "_build",
     "**/.ipynb_checkpoints/",
