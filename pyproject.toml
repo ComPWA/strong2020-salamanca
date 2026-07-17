@@ -229,6 +229,7 @@ docstring-code-format = true
 line-ending = "lf"
 
 [tool.ruff.lint]
+allowed-confusables = ["–"]
 ignore = [
     "ANN401",
     "COM812",
