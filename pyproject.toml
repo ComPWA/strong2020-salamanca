@@ -1,7 +1,7 @@
 [project]
 name = "strong2020-salamanca"
 description = "Jupyter notebooks for the STRONG2020 school in Salamanca, 2023"
-requires-python = "~=3.13.0"
+requires-python = "~=3.14.0"
 authors = [
     { name = "Common Partial Wave Analysis", email = "compwa-admin@ep1.rub.de" },
     { name = "STRONG2020" }
