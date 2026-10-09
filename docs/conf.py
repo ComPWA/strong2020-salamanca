@@ -3,7 +3,7 @@ from sphinx_api_relink.helpers import get_execution_mode
 REPO_NAME = "strong2020-salamanca"
 BRANCH = "main"
 
-author = "Participants of the STRONG2020 HaSP School"
+author = ""
 autosectionlabel_prefix_document = True
 comments_config = {
     "hypothesis": True,
