@@ -10,7 +10,7 @@ comments_config = {
 }
 copybutton_prompt_is_regexp = True
 copybutton_prompt_text = r">>> |\.\.\. "  # doctest
-copyright = ""
+copyright = "2023"
 exclude_patterns = [
     "_build",
     "**/.ipynb_checkpoints/",
