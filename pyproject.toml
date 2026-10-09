@@ -170,7 +170,7 @@ sequence = [
 ]
 
 [tool.poe.tasks.style]
-cmd = "pre-commit run --all-files"
+cmd = "prek run --all-files"
 help = "Perform all linting, formatting, and spelling checks"
 
 [tool.poe.tasks.upgrade]
@@ -187,7 +187,7 @@ executor = { type = "simple" }
 
 [tool.poe.tasks._upgrade-uv]
 expr = """
-all(
+all([
     subprocess.run(
         ["uv", "lock", "--upgrade", "--directory", str(pathlib.Path(file).parent)],
         check=False,
@@ -199,7 +199,7 @@ all(
         text=True,
     ).stdout.splitlines()
     if pathlib.Path(file).name == "pyproject.toml"
-)
+])
 """
 imports = ["pathlib", "subprocess"]
 assert = true
@@ -313,5 +313,5 @@ key-empty = "off"
 
 [[tool.tombi.schemas]]
 root = "tool.compwa.policy"
-path = "https://raw.githubusercontent.com/ComPWA/policy/0.9.8/compwa-policy.schema.json"
+path = "https://raw.githubusercontent.com/ComPWA/policy/0.10.0/compwa-policy.schema.json"
 include = ["pyproject.toml"]
