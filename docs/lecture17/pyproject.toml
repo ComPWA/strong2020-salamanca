@@ -22,6 +22,7 @@ ignore = [
     "D",
     "lambda-assignment",
     "FBT00",
+    "TC00",
     "single-line-implicit-string-concatenation",
     "invalid-class-name",
     "non-lowercase-variable-in-function",
