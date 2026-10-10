@@ -3,14 +3,14 @@ from sphinx_api_relink.helpers import get_execution_mode
 REPO_NAME = "strong2020-salamanca"
 BRANCH = "main"
 
-author = "Participants of the STRONG2020 HaSP School"
+author = ""
 autosectionlabel_prefix_document = True
 comments_config = {
     "hypothesis": True,
 }
 copybutton_prompt_is_regexp = True
 copybutton_prompt_text = r">>> |\.\.\. "  # doctest
-copyright = "2023"  # ruff:ignore[builtin-variable-shadowing]
+copyright = "2023, ComPWA"
 exclude_patterns = [
     "_build",
     "**/.ipynb_checkpoints/",
