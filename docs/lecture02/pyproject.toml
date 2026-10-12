@@ -1,7 +1,7 @@
 [project]
 name = "lecture"
 version = "0.1.0"
-requires-python = "~=3.13.0"
+requires-python = "~=3.14.0"
 dependencies = [
     "gdown",
     "matplotlib",
@@ -15,13 +15,13 @@ preview = true
 [tool.ruff.lint]
 allowed-confusables = ["–"]
 ignore = [
-    "ANN001",
-    "COM812",
-    "CPY001",
+    "missing-type-function-argument",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "ISC001",
-    "PLR2004",
-    "T201",
+    "single-line-implicit-string-concatenation",
+    "magic-value-comparison",
+    "print",
 ]
 select = ["ALL"]
 

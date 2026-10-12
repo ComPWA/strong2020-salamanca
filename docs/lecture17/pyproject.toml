@@ -1,7 +1,7 @@
 [project]
 name = "lecture"
 version = "0.1.0"
-requires-python = "~=3.13.0"
+requires-python = "~=3.14.0"
 dependencies = [
     "ampform>=0.14.8",
     "nbformat>=4.2.0",
@@ -16,21 +16,22 @@ preview = true
 [tool.ruff.lint]
 ignore = [
     "ANN00",
-    "ARG002",
-    "COM812",
-    "CPY001",
+    "unused-method-argument",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "E731",
+    "lambda-assignment",
     "FBT00",
-    "ISC001",
-    "N801",
-    "N806",
-    "PLC2401",
-    "PLR0913",
-    "PLR0917",
-    "PLR2004",
-    "RUF027",
-    "S101",
+    "TC00",
+    "single-line-implicit-string-concatenation",
+    "invalid-class-name",
+    "non-lowercase-variable-in-function",
+    "non-ascii-name",
+    "too-many-arguments",
+    "too-many-positional-arguments",
+    "magic-value-comparison",
+    "missing-f-string-syntax",
+    "assert",
 ]
 select = ["ALL"]
 
