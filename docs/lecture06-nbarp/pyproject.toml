@@ -1,24 +1,24 @@
 [project]
+name = "lecture"
+version = "0.1.0"
+requires-python = "~=3.14.0"
 dependencies = [
     "gdown",
     "matplotlib",
     "numpy",
     "pandas",
 ]
-name = "lecture"
-requires-python = "~=3.13.0"
-version = "0.1.0"
 
 [tool.ruff]
 preview = true
 
 [tool.ruff.lint]
 ignore = [
-    "COM812",
-    "CPY001",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
     "D",
-    "ISC001",
-    "N816",
+    "single-line-implicit-string-concatenation",
+    "mixed-case-variable-in-global-scope",
 ]
 select = ["ALL"]
 

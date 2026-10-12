@@ -14,10 +14,11 @@
     "ms-vscode.live-server",
     "soulcode.vscode-unwanted-extensions",
     "stkb.rewrap",
-    "tamasfe.even-better-toml",
+    "tombi-toml.tombi",
     "yzhang.markdown-all-in-one"
   ],
   "unwantedRecommendations": [
+    "astral-sh.ty",
     "bungcip.better-toml",
     "davidanson.vscode-markdownlint",
     "garaioag.garaio-vscode-unwanted-recommendations",
@@ -26,7 +27,9 @@
     "ms-python.isort",
     "ms-python.mypy-type-checker",
     "ms-python.pylint",
+    "ms-python.vscode-pylance",
     "ms-toolsai.vscode-jupyter-slideshow",
+    "tamasfe.even-better-toml",
     "travisillig.vscode-json-stable-stringify",
     "tyriar.sort-lines"
   ]
