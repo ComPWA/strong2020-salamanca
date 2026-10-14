@@ -81,6 +81,7 @@ html_theme_options = {
     "show_toc_level": 2,
     "use_download_button": False,
     "use_edit_page_button": True,
+    "use_fullscreen_button": False,
     "use_issues_button": True,
     "use_repository_button": True,
     "use_source_button": True,
@@ -98,7 +99,6 @@ myst_enable_extensions = [
     "strikethrough",
 ]
 myst_update_mathjax = False
-mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 nb_execution_excludepatterns = [
     "**.ipynb_checkpoints",
     ".virtual_documents/*",
