@@ -111,7 +111,6 @@ sphinx-autobuild \
     --re-ignore=\\.tmp$ \
     --re-ignore=\\.txt$ \
     --re-ignore=\\.ya?ml$ \
-    --watch=src \
     docs/ \
     docs/_build/html/
 """
