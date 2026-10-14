@@ -31,7 +31,6 @@ html_favicon = "_static/favicon.ico"
 html_js_files = [
     "https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"
 ]
-html_last_updated_fmt = "%-d %B %Y"
 html_logo = "_static/logo.svg"
 html_show_copyright = False
 html_static_path = ["_static"]
