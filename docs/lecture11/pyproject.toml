@@ -1,0 +1,31 @@
+[project]
+name = "lecture"
+version = "0.1.0"
+requires-python = "~=3.14.0"
+dependencies = [
+    "gdown",
+    "matplotlib",
+    "numpy",
+    "particle",
+]
+
+[tool.ruff]
+preview = true
+
+[tool.ruff.lint]
+allowed-confusables = ["–"]
+ignore = [
+    "missing-type-function-argument",
+    "missing-trailing-comma",
+    "missing-copyright-notice",
+    "D",
+    "single-line-implicit-string-concatenation",
+    "magic-value-comparison",
+    "print",
+]
+select = ["ALL"]
+
+[tool.ruff.lint.flake8-builtins]
+ignorelist = ["display"]
+
+[tool.uv.workspace]
