@@ -265,6 +265,7 @@ dependencies = [
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "particle" },
+    { name = "pylorentz" },
 ]
 
 [package.metadata]
@@ -273,6 +274,7 @@ requires-dist = [
     { name = "matplotlib" },
     { name = "numpy" },
     { name = "particle" },
+    { name = "pylorentz" },
 ]
 
 [[package]]
@@ -387,6 +389,15 @@ wheels = [
     { url = "https://files.pythonhosted.org/packages/90/de/3634abee5f1c9e13c56787b7d5517b0ba8d6de51700b95578cf338349c9f/pillow-12.3.0-cp314-cp314t-win_amd64.whl", hash = "sha256:962864dc93511324d51ddbb5b9f8731bf71675b93ca612a07441896f4688fb8c", size = 7242939, upload-time = "2026-07-01T11:55:34.044Z" },
     { url = "https://files.pythonhosted.org/packages/ce/2a/fd13f8eb24de5714a6eb444a3d67e2842c6c576e159a43793adf23051351/pillow-12.3.0-cp314-cp314t-win_arm64.whl", hash = "sha256:0740a512dc522224c77d9aa5a8d70d8b7d73fb91f2c21125d8d025d3b8990e45", size = 2567506, upload-time = "2026-07-01T11:55:35.988Z" },
 ]
+
+[[package]]
+name = "pylorentz"
+version = "0.3.3"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "numpy" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/fa/a1/b041ae7869614f94f832c4d3ef851d3fef35a353b5213326434f660101e9/pylorentz-0.3.3.tar.gz", hash = "sha256:4dcc3716d1f858e39acd637ff9333352142a9abf968e3451a9759dd66b2c5da6", size = 12259, upload-time = "2020-09-09T12:27:52.217Z" }
 
 [[package]]
 name = "pyparsing"
