@@ -98,7 +98,6 @@ myst_enable_extensions = [
     "strikethrough",
 ]
 myst_update_mathjax = False
-mathjax_path = "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
 nb_execution_excludepatterns = [
     "**.ipynb_checkpoints",
     ".virtual_documents/*",
